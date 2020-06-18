@@ -9,10 +9,13 @@ function TodoItem(props) {
     }
 
     return (
-        <label className="todo-item">
-            <input type="checkbox" checked={props.item.completed} onChange={() => props.handleCheck(props.item.id)}/>
-            <p style={props.item.completed ? completedStyle : null}>{props.item.text}</p>
-        </label>
+        
+            <label className="todo-item">
+                <input type="checkbox" checked={props.item.completed} onChange={() => props.handleCheck(props.item.id)}/>
+                <p style={props.item.completed ? completedStyle : null}>{props.item.text}</p>
+                <button onClick={() => props.handleDelete(props.item.id)}>Delete</button>
+            </label>
+           
     )
 }
 
