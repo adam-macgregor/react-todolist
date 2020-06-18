@@ -77,9 +77,18 @@ class TodoList extends React.Component {
     render() {
 
         const todoItems = this.state.todos.map(item => <TodoItem key={item.id} item={item} handleCheck={this.handleCheck} handleDelete={this.handleDelete}/>)
-
+        let remainingTodos = 0
+        this.state.todos.forEach(item => {
+            if(item.completed === false) {
+                remainingTodos = remainingTodos + 1
+            }
+        })
+        
         return (
             <div className="todo-list">
+                <div>
+                    <h3>Todos remaining: {remainingTodos}</h3>
+                </div>
                 <div>
                     <input
                         id="myInput"
