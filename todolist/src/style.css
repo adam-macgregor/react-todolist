@@ -15,7 +15,15 @@ img {
 h1 {
     margin: auto;
     margin-left: 0;
-    font-size: 35px;
+    font-size: 45px;
+    font-weight: 100;
+    font-family: sans-serif;
+}
+
+h3 {
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 70;
 }
 
 .todo-list {
@@ -40,7 +48,7 @@ h1 {
     justify-content: space-around;
     align-items: center;
     padding: 30px 20px 0;
-    width: 70%;
+    width: 100%;
     border-bottom: 1px solid #cecece;
     font-family: Roboto, sans-serif;
     font-weight: 100;

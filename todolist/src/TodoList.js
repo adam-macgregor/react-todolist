@@ -99,7 +99,9 @@ class TodoList extends React.Component {
                         onChange={this.handleChange}
                     />
                     <button onClick={this.addTodo}>Add todo</button>
-                    {this.state.todos.some(item => {return item.completed}) ? <button onClick={this.deleteCompleted}>Delete all completed todos</button> : null}
+                </div>
+                <div>
+                    <button onClick={this.deleteCompleted} style={this.state.todos.some(item => {return item.completed}) ? {opacity: 1} : {opacity: 0}}>Delete all completed todos</button>
                 </div>
                 <div>
                     {todoItems}
