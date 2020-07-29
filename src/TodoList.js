@@ -87,7 +87,7 @@ class TodoList extends React.Component {
         return (
             <div className="todo-list">
                 <div>
-                    <h3>Todos remaining: {remainingTodos}</h3>
+                    <h3>To-do's remaining: {remainingTodos}</h3>
                 </div>
                 <div>
                     <input
@@ -98,10 +98,10 @@ class TodoList extends React.Component {
                         value={this.state.newTodo}
                         onChange={this.handleChange}
                     />
-                    <button onClick={this.addTodo}>Add todo</button>
+                    <button onClick={this.addTodo}>Add to-do</button>
                 </div>
                 <div>
-                    <button onClick={this.deleteCompleted} style={this.state.todos.some(item => {return item.completed}) ? {opacity: 1} : {opacity: 0}}>Delete all completed todos</button>
+                    <button onClick={this.deleteCompleted} style={this.state.todos.some(item => {return item.completed}) ? {opacity: 1} : {opacity: 0}}>Delete all completed to-do's</button>
                 </div>
                 <div>
                     {todoItems}
