@@ -34,7 +34,8 @@ class TodoList extends React.Component {
         this.setState({ [name]: value })
     }
 
-    addTodo() {
+    addTodo(event) {
+        event.preventDefault()
         if(this.state.newTodo === "") { return }
         this.setState(prevState => {
             const updatedTodoList = prevState.todos
@@ -90,15 +91,17 @@ class TodoList extends React.Component {
                     <h3>To-do's remaining: {remainingTodos}</h3>
                 </div>
                 <div>
-                    <input
-                        id="myInput"
-                        type="text"
-                        name="newTodo"
-                        placeholder="New todo"
-                        value={this.state.newTodo}
-                        onChange={this.handleChange}
-                    />
-                    <button onClick={this.addTodo}>Add to-do</button>
+                    <form onSubmit={this.addTodo}>
+                        <input
+                            id="myInput"
+                            type="text"
+                            name="newTodo"
+                            placeholder="New todo"
+                            value={this.state.newTodo}
+                            onChange={this.handleChange}
+                        />
+                        <button type ="submit">Add to-do</button>
+                    </form>
                 </div>
                 <div>
                     <button onClick={this.deleteCompleted} style={this.state.todos.some(item => {return item.completed}) ? {opacity: 1} : {opacity: 0}}>Delete all completed to-do's</button>
